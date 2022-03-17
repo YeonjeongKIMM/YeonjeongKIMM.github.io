@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>homework2-1</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    header,.container {width: 800px;padding: 10px;}
+    header {height: 40px;}
+    h2 {margin: 10px 0 15px 0;}
+    .title {
+        float: left;
+        font-size: 50px;
+        font-weight: 900;
+        color:crimson;
+    }
+    .date {
+        text-align: right;
+        font-weight: 900;
+        float: right;
+        color:crimson;
+    }
+    .column {
+        display: table;
+    }
+    article {
+        display: table-cell;
+        padding-right: 10px;
+    }
+    ul {padding: 0;}
+    li:first-child {border-top: 1px solid #000;}
+    li {
+        list-style: none;
+        font-style: italic;
+        padding: 5px 0;
+        border-bottom: 1px solid #000;
+    }
+    .box {
+        width: 300px;
+    }
+    p {font-family: serif; margin-top: 0;line-height: 140%;}
+    img {
+        width: 300px;
+        margin: 0 5px 5px 0;
+    }
+</style>
+<body>
+        <header>
+            <div class="title">Stanford Performing Arts</div>
+            <div class="date">Autumn 2012<br>Edition</div>
+        </header>
+        <div class="container">
+        <section class="column">
+            <article>
+                <h2>Bing Concert Hall</h2>
+                <img src="images/concert_hall.jpg" alt="concert hall" align="left">
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.<br><br>The point of using Lorem Ipsum is that it has a more-or-less.Normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+            </article>
+            <article class="box">
+                <h2>Calendar</h2>
+                <ul>
+                    <li>Harmony for Humanity : Daniel Pearl World Music Concert</li>
+                    <li>Sundays with the St. Lawrence String Quartet</li>
+                    <li>Merce Cunningham Dance Company</li>
+                    <li>Juilliard String Quartet</li>
+                </ul>
+            </article>
+        </section>
+    </div>
+</body>
+</html>
