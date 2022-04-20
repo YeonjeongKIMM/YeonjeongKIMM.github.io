@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<head>
+</head>
+<body>
+
+ <br>
+ <a href="area1.php"><h3>삼각형</h3></a>
+
+
+ <a href="area2.php"><h3>직사각형</h3></a>
+   
+
+ <a href="area3.php"><h3>원</h3></a>
+
+
+ <a href="area4.php"><h3>직육면체</h3></a>
+
+ <a href="area5.php"><h3>원통</h3></a>
+
+ <a href="area6.php"><h3>구</h3></a>
+ 
+
+</body> 
+</html>
