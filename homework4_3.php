@@ -5,38 +5,78 @@
 .error {color: #FF0000;}
 </style>
 </head>
-<body>
-<div class="contact">
-  <h1>Fibonacci series in PHP</h1>
-  <form action="#" method="POST">
-    Enter number : <input type="text" name="number" id="number" /></br>
-    <input  type="submit" name="submit" id="submit" value="Submit"></input>
-  </form>
+<body>  
 
-  <?php
-   if(isset($_POST['submit'])) {
-     $n = $_POST['number'];
-    
-     function fibonacci_series($a) {
-       $f1 = -1;
-       $f2 = 1;
+<?php
+// define variables and set to empty values
+$nErr= "";
+$n= "";
+$dada = array();
+$a = 0;
+$b = 1;
+$c = 0;
+$f = 0;
+$format_a = number_format($a, 1);
+$format_b = number_format($b, 1);
+$format_c = number_format($c, 1);
+$format_f = number_format($f, 1);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["n"])) {
+    $nErr = "n is required";
+  } else {
+    $n = test_input($_POST["n"]);
+    // check if name only contains letters and whitespace
+    }
+}
 
-       for ($i = 1; $i <= $a; $i++) {
-        $f = $f1 + $f2;
-        $f1 = $f2;
-        $f2 = $f;
-        echo "$f<br />"; 
-       }
-       
-     }
-  
-    echo "Fibonacci series of $n is:<br />";
-    echo fibonacci_series($n);
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
 
-   }
+<h2>PHP HomeWork 4-3</h2>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+  n : <input type="text" name="n" value="<?php echo $n;?>">
+  <span class="error">* <?php echo $nErr;?></span>
+  <br><br>
+  <input type="submit" name="submit" value="Submit">  
+</form>
 
+<?php
 
-  ?>
-</div>
+for($i = 0; $i <= $n; $i++)
+{
+    if($i == 0)
+    {
+        echo $a;
+        echo "<br>";
+        continue;
+    }
+    else if($i == 1)
+    {
+        echo $b;
+        echo "<br>";
+        continue;
+
+    }
+
+    $c = $a + $b;
+    echo $c, "";
+
+    $a = $b;
+    $b = $c;
+
+    // $f = $c / $a+$b;
+    // $format_f = number_format($f, 1); 
+    // echo $format_f;
+    echo "<br>";
+
+}
+
+?>
+
 </body>
 </html>
