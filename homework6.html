@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <title>카페 음료 주문서</title>
+
+    <script type="text/javascript" src="/js/formcalculations.js">
+    </script>
+    
+
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload="hideTotal(),show_time()">
+
+    <div id="time"></div>
+    
+    <div id="wrap">
+        <form action="" id="cakeform" onsubmit="return false;">
+        <div>
+            <div class="cont_order">
+               <fieldset>
+                <legend>주문서</legend>
+                <label >메뉴</label>
+                <label class='radiolabel'><input type="radio"  name="selectedcake" value="Round6" onclick="calculateTotal()" />아메리카노 (1500원)</label><br/>
+                <label class='radiolabel'><input type="radio"  name="selectedcake" value="Round8" onclick="calculateTotal()" />카페라떼 (2500원)</label><br/>
+                <label class='radiolabel'><input type="radio"  name="selectedcake" value="Round10" onclick="calculateTotal()" />카페모카 (3500원)</label><br/>
+                <label class='radiolabel'><input type="radio"  name="selectedcake" value="Round12" onclick="calculateTotal()" />카라멜 마끼아또 (4000원)</label><br/>
+                <br/>
+                <label >추가 옵션</label>
+         
+                <select id="filling" name='filling' onchange="calculateTotal()">
+                <option value="None">없음</option>
+                <option value="Whip">휘핑추가(+500원)</option>
+                <option value="Mocha">모카 드리즐 추가(+300원)</option>
+                <option value="Caramel">카라멜 드리즐 추가(+400원)</option>
+                <option value="Shot">샷추가(+500원)</option>
+               </select>
+                <br/>
+                <p>
+                <label for='includecandles' class="inlinelabel">포장(+500원)</label>
+               <input type="checkbox" id="includecandles" name='includecandles' onclick="calculateTotal()" />
+               </p>
+               
+                <p>
+                <label class="inlinelabel" for='includeinscription'>요청사항</label>
+                <input type="checkbox" id="includeinscription" name="includeinscription" onclick="calculateTotal()" />
+                <input type="text"  id="theinscription" name="theinscription" value="요청사항을 적어주세요"  />
+                </p>
+                <div id="totalPrice"></div>
+                
+                </fieldset>
+            </div>
+            
+        	<div class="cont_details">
+            	<fieldset>
+                <legend>주문자 정보</legend>
+                <label for='name'>이름</label>
+                <input type="text" id="name" name='name' />
+                <br/>
+                <label for='address'>주소</label>
+                <input type="text" id="address" name='address' />
+                <br/>
+                <label for='phonenumber'>휴대폰 번호</label>
+                <input type="text"  id="phonenumber" name='phonenumber'/>
+                <br/>
+                </fieldset>
+            </div>
+
+
+            <input type='submit' id='submit' value='Submit' onclick="calculateTotal()" />
+        </div>
+       </form>
+       
+	</div><!--End of wrap-->
+
+    <!--계산기-->
+    <div class="cal">
+    <div class="ds">
+        <input id="display" type="text" />
+      </div>
+      <div>
+        <input id="result" type="text" />
+      </div>
+
+      <div>
+        <div class="buttonWrap">
+          <button id="ac" onclick="reset()">AC</button>
+          <button onclick="addOutput('/')">/</button>
+        </div>
+        <div class="buttonWrap">
+          <button onclick="addOutput(7)">7</button>
+          <button onclick="addOutput(8)">8</button>
+          <button onclick="addOutput(9)">9</button>
+          <button onclick="addOutput('*')">*</button>
+        </div>
+        <div class="buttonWrap">
+          <button onclick="addOutput(4)">4</button>
+          <button onclick="addOutput(5)">5</button>
+          <button onclick="addOutput(6)">6</button>
+          <button onclick="addOutput('+')">+</button>
+        </div>
+        <div class="buttonWrap">
+          <button onclick="addOutput(1)">1</button>
+          <button onclick="addOutput(2)">2</button>
+          <button onclick="addOutput(3)">3</button>
+          <button onclick="addOutput('-')">-</button>
+        </div>
+        <div class="buttonWrap">
+          <button onclick="addOutput(0)">0</button>
+          <button onclick="addOutput('.')">.</button>
+          <button style="width:100px" onclick="calculate()">=</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+</body>
+</html>
